@@ -1,0 +1,24 @@
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Fecha de creación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Alumnos of Students" [ngClass]="Alumnos.edad >= 18 ? 'mayorEdad' : ''">
+        <th scope="row">{{ Alumnos.id }}</th>
+        <td>{{ Alumnos.nombre | uppercase }} <span *ngIf="Alumnos.edad>=18">(Mayor)</span></td>
+        <td>{{ Alumnos.apellido | uppercase }}</td>
+        <td>{{ Alumnos.correo}}</td>
+        <td>{{ Alumnos.edad}}</td>
+        <td>{{ Alumnos.fechaInsc | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
